@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222212128) do
+ActiveRecord::Schema.define(version: 20151223002409) do
+
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "transactions", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151222212128) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "group_id"
   end
 
 end
